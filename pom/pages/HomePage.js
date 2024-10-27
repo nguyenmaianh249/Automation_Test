@@ -27,7 +27,7 @@ exports.HomePage = class HomePage {
     }
 
     async goToCareerOpportunityPage() {
-        await this.page.$eval('a.nav-link', el => el.removeAttribute("target"))
+        await this.page.$eval('a[href="https://vtit.jobday.vn/"]', el => el.removeAttribute("target"))
         await this.locator.careerOpportunityNav.click()
     }
     

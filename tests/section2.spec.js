@@ -15,8 +15,11 @@ test.beforeEach(async ({ homePage, page }) => {
 test.describe('Section 2', () => {
     test('Checking Elements Visible', async ({ homePage, careerOpportunityPage, page }) => {
          // Redriect to About Us page
+         console.log(await page.title())
+
         await homePage.goToCareerOpportunityPage();
-        await page.goto("https://vtit.jobday.vn/")
+        console.log(await page.title())
+        // await page.goto("https://vtit.jobday.vn/")
         await careerOpportunityPage.verifyKienTaoTuongLaiHeaderVisible()
         await careerOpportunityPage.verifyViTriNoiBatButtonVisible()
     })
