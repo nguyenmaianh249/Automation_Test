@@ -2,6 +2,7 @@ const base = require('@playwright/test');
 const { HomePage } = require('./HomePage')
 const { AboutUsPage } = require('./AboutUsPage')
 const { CareerOpportunityPage } = require('./CareerOpportunityPage')
+
 exports.test = base.test.extend({
     homePage: async ({ page }, use) => {
         // Set up fixture 
@@ -9,6 +10,7 @@ exports.test = base.test.extend({
         // Use fixture 
         await use(homePage);
     },
+
 
     aboutUsPage: async ({ page }, use) => {
         // Set up fixture 

@@ -1,5 +1,6 @@
 const {test, expect} = require('@playwright/test')
 const {HomeLocators} = require('../locators/HomeLocators')
+const { context } = require('playwright')
 import home from "../../test-data/home.json"
 
 exports.HomePage = class HomePage {
@@ -26,6 +27,7 @@ exports.HomePage = class HomePage {
     }
 
     async goToCareerOpportunityPage() {
+        await this.page.$eval('a.nav-link', el => el.removeAttribute("target"))
         await this.locator.careerOpportunityNav.click()
     }
     
