@@ -13,16 +13,20 @@ exports.HomePage = class HomePage {
     }
 
     async verifyNavItem() {
-        await expect(this.page.locator(`xpath= ${this.locator.aboutUsNav}`)).toBeVisible()
-        await expect(this.page.locator(`xpath= ${this.locator.producTechnologyNav}`)).toBeVisible()
-        await expect(this.page.locator(`xpath= ${this.locator.businessAreaNav}`)).toBeVisible()
-        await expect(this.page.locator(`xpath= ${this.locator.customerPartnersNav}`)).toBeVisible()
-        await expect(this.page.locator(`xpath= ${this.locator.careerOpportunityNav}`)).toBeVisible()
-        await expect(this.page.locator(`xpath= ${this.locator.newsNav}`)).toBeVisible()
+        await expect(this.locator.aboutUsNav).toBeVisible()
+        await expect(this.locator.producTechnologyNav).toBeVisible()
+        await expect(this.locator.businessAreaNav).toBeVisible()
+        await expect(this.locator.customerPartnersNav).toBeVisible()
+        await expect(this.locator.careerOpportunityNav).toBeVisible()
+        await expect(this.locator.newsNav).toBeVisible()
     }
 
     async goToAboutUsPage() {
-        await this.page.locator(`xpath= ${this.locator.aboutUsNav}`).click()
+        await this.locator.aboutUsNav.click()
+    }
+
+    async goToCareerOpportunityPage() {
+        await this.locator.careerOpportunityNav.click()
     }
     
 }
